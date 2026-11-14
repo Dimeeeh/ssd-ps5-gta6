@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0618">
+<title>PS5 Storage Check – SSD pour GTA 6</title>
+<meta name="description" content="Trouve le bon SSD pour ta PS5 avant la sortie de GTA 6, en 2 clics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0618;--bg2:#150b2e;--ink:#f6f0ff;--mut:#a79bc4;--pink:#ff4fa3;--org:#ff9a3c;--cy:#3ee0ff;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.6 Manrope,system-ui,sans-serif;overflow-x:hidden;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,.num{font-family:Unbounded,Manrope,sans-serif}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+#bar{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--pink),var(--org));z-index:30}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 14px;backdrop-filter:blur(14px);background:rgba(11,6,24,.55)}
+nav b{font:800 .95rem Unbounded,sans-serif;letter-spacing:.02em}
+.reg{display:flex;gap:4px;background:rgba(255,255,255,.07);border-radius:99px;padding:4px}
+.reg button{all:unset;cursor:pointer;padding:6px 12px;border-radius:99px;font-weight:600;font-size:.85rem;color:var(--mut);transition:.25s}
+.reg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;padding:120px 5vw 80px;overflow:hidden}
+.sun{position:absolute;left:50%;bottom:-18vmin;width:90vmin;height:90vmin;margin-left:-45vmin;border-radius:50%;background:linear-gradient(180deg,var(--org),var(--pink) 55%,#7a2cff);filter:blur(.5px);box-shadow:0 0 140px 40px rgba(255,79,163,.35);will-change:transform;-webkit-mask:repeating-linear-gradient(180deg,#000 0 14px,transparent 14px 18px);mask:repeating-linear-gradient(180deg,#000 0 14px,transparent 14px 18px);-webkit-mask-size:100% 100%;mask-composite:intersect}
+.sun::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(180deg,transparent 40%,var(--bg) 100%)}
+.grid{position:absolute;left:-50%;right:-50%;bottom:0;height:38vh;background:linear-gradient(var(--cy) 1px,transparent 1px) 0 0/100% 38px,linear-gradient(90deg,var(--cy) 1px,transparent 1px) 0 0/60px 100%;opacity:.22;transform:perspective(380px) rotateX(62deg);transform-origin:bottom;animation:flow 2.4s linear infinite;-webkit-mask:linear-gradient(transparent,#000 70%);mask:linear-gradient(transparent,#000 70%)}
+@keyframes flow{to{background-position:0 38px,0 0}}
+.hero .in{position:relative;z-index:2;max-width:980px}
+.tag{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:.85rem;color:var(--mut);margin-bottom:22px}
+h1{font-weight:800;font-size:clamp(2.2rem,7.5vw,5.6rem);line-height:1.02;letter-spacing:-.03em}
+h1 span{display:block;overflow:hidden}
+h1 span i{display:block;font-style:normal;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+h1 span:nth-child(2) i{animation-delay:.12s;background:linear-gradient(90deg,var(--pink),var(--org));-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes up{to{transform:none}}
+.lead{margin:22px auto 34px;color:var(--mut);max-width:46ch;opacity:0;animation:fade .8s .5s forwards}
+@keyframes fade{to{opacity:1}}
+.cd{display:flex;justify-content:center;gap:clamp(8px,2.4vw,22px);opacity:0;animation:fade .8s .7s forwards}
+.cd div{min-width:clamp(64px,15vw,130px);padding:16px 8px;border:1px solid var(--line);border-radius:18px;background:rgba(21,11,46,.6);backdrop-filter:blur(8px)}
+.cd .num{display:block;font-weight:800;font-size:clamp(1.7rem,6vw,3.6rem);font-variant-numeric:tabular-nums;line-height:1.1}
+.cd small{color:var(--mut);font-size:.8rem}
+.cd .num.tick{animation:tick .35s}
+@keyframes tick{50%{transform:translateY(-6px);color:var(--cy)}}
+.out{display:none;font:800 1.2rem Unbounded;margin-top:18px;color:var(--cy)}
+.hint{position:absolute;bottom:22px;left:50%;translate:-50% 0;z-index:3;color:var(--mut);font-size:.85rem;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(7px)}}
+section.blk{max-width:1080px;margin:0 auto;padding:clamp(70px,12vw,150px) 5vw}
+h2{font-weight:800;font-size:clamp(1.6rem,4.4vw,3rem);letter-spacing:-.02em;line-height:1.1;margin-bottom:14px}
+.sub{color:var(--mut);max-width:52ch;margin-bottom:36px}
+.rv{opacity:0;transform:translateY(46px) scale(.98);filter:blur(6px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1),filter .9s}
+.rv.on{opacity:1;transform:none;filter:none}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.specs div{padding:22px;border-radius:20px;background:var(--bg2);border:1px solid var(--line);transition:.3s}
+.specs div:hover{transform:translateY(-6px);border-color:var(--cy)}
+.specs b{display:block;font:800 1.15rem Unbounded;margin-bottom:6px}
+.specs span{color:var(--mut);font-size:.92rem}
+.pick{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:28px}
+.pick button{all:unset;cursor:pointer;padding:22px;border-radius:22px;border:1px solid var(--line);background:var(--bg2);transition:.3s;position:relative;overflow:hidden}
+.pick button b{display:block;font:800 2rem Unbounded}
+.pick button span{color:var(--mut);font-size:.92rem}
+.pick button[aria-pressed=true]{border-color:var(--pink);background:linear-gradient(135deg,rgba(255,79,163,.22),rgba(255,154,60,.12));transform:translateY(-4px);box-shadow:0 18px 50px -18px var(--pink)}
+.card{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;padding:clamp(22px,4vw,44px);border-radius:28px;border:1px solid var(--line);background:radial-gradient(circle at 90% 0,rgba(62,224,255,.14),transparent 55%),var(--bg2)}
+@media(max-width:760px){.card{grid-template-columns:1fr}}
+.card.swap{animation:swap .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes swap{from{opacity:0;transform:translateX(34px) rotate(.6deg)}}
+.card h3{font:800 clamp(1.4rem,3.4vw,2.2rem) Unbounded;line-height:1.15;margin-bottom:12px}
+.card ul{list-style:none;padding:0;margin:16px 0 24px;display:grid;gap:8px}
+.card li{color:var(--mut)}
+.card li b{color:var(--ink)}
+.meter{align-self:center}
+.meter p{color:var(--mut);font-size:.9rem;margin-bottom:8px}
+.track{height:14px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+.fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--cy),var(--pink));transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.meter strong{display:block;margin-top:12px;font:800 2.4rem Unbounded}
+.btn{display:inline-block;text-decoration:none;font-weight:800;padding:15px 26px;border-radius:99px;background:linear-gradient(90deg,var(--pink),var(--org));color:#1a0a22;transition:.25s;box-shadow:0 10px 30px -10px var(--pink)}
+.btn:hover{transform:translateY(-3px) scale(1.03)}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--ink);box-shadow:none}
+.warn{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;padding:clamp(22px,4vw,40px);border-radius:28px;border:1px dashed var(--org);background:rgba(255,154,60,.07)}
+@media(max-width:640px){.warn{grid-template-columns:1fr}}
+.screw{width:84px;height:84px;border-radius:50%;border:6px solid var(--org);position:relative;animation:spin 5s linear infinite}
+.screw::before,.screw::after{content:"";position:absolute;background:var(--org);left:50%;top:50%;translate:-50% -50%;border-radius:4px}
+.screw::before{width:44px;height:8px}.screw::after{width:8px;height:44px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.warn p{color:var(--mut);margin:6px 0 18px}
+.steps{display:grid;gap:0;counter-reset:s}
+.steps li{list-style:none;position:relative;padding:0 0 34px 64px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:800 1rem Unbounded;background:var(--bg2);border:1px solid var(--pink)}
+.steps li::after{content:"";position:absolute;left:21px;top:48px;bottom:4px;width:2px;background:linear-gradient(var(--pink),transparent)}
+.steps li:last-child::after{display:none}
+.steps b{display:block;font-size:1.1rem}
+.steps span{color:var(--mut)}
+footer{border-top:1px solid var(--line);padding:40px 5vw;text-align:center;color:var(--mut);font-size:.85rem}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}h1 span i,.lead,.cd{transform:none;opacity:1}.rv{opacity:1;transform:none;filter:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav>
+  <b>PS5 STORAGE CHECK</b>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
+    <div class="reg" id="lg" role="group" aria-label="Langue / Language">
+      <button data-l="fr" aria-pressed="true">FR</button>
+      <button data-l="en" aria-pressed="false">EN</button>
+    </div>
+    <div class="reg" id="rg" role="group" aria-label="Amazon">
+      <button data-r="fr" aria-pressed="true">France</button>
+      <button data-r="be" aria-pressed="false" data-t="rbe"></button>
+      <button data-r="us" aria-pressed="false">USA</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="sun" id="sun"></div>
+  <div class="grid"></div>
+  <div class="in">
+    <span class="tag" data-t="tag"></span>
+    <h1><span><i data-t="h1a"></i></span><span><i data-t="h1b"></i></span></h1>
+    <p class="lead" data-t="lead"></p>
+    <div class="cd" id="cd">
+      <div><span class="num" id="d">--</span><small data-t="dd"></small></div>
+      <div><span class="num" id="h">--</span><small data-t="hh"></small></div>
+      <div><span class="num" id="m">--</span><small data-t="mm"></small></div>
+      <div><span class="num" id="s">--</span><small data-t="ss"></small></div>
+    </div>
+    <p class="out" id="out"></p>
+  </div>
+  <span class="hint" data-t="hint"></span>
+</header>
+
+<section class="blk" id="compat">
+  <h2 class="rv" data-t="h2a"></h2>
+  <p class="sub rv" data-t="suba"></p>
+  <div class="specs rv">
+    <div><b>M.2 NVMe</b><span data-t="sp1"></span></div>
+    <div><b data-t="sp2b"></b><span data-t="sp2"></span></div>
+    <div><b data-t="sp3b"></b><span data-t="sp3"></span></div>
+  </div>
+</section>
+
+<section class="blk" id="conf">
+  <h2 class="rv" data-t="h2b"></h2>
+  <p class="sub rv" data-t="subb"></p>
+  <div class="pick rv" id="pick" role="group">
+    <button data-k="1" aria-pressed="false"><b data-t="c1"></b><span data-t="u1"></span></button>
+    <button data-k="2" aria-pressed="true"><b data-t="c2"></b><span data-t="u2"></span></button>
+    <button data-k="4" aria-pressed="false"><b data-t="c4"></b><span data-t="u4"></span></button>
+  </div>
+  <div class="card rv" id="card">
+    <div>
+      <span class="tag" style="margin-bottom:14px" data-t="rec"></span>
+      <h3 id="pn"></h3>
+      <ul>
+        <li><span data-t="spd"></span> <b id="ps"></b></li>
+        <li><span data-t="hs"></span> <b data-t="hsb"></b></li>
+        <li id="pd"></li>
+      </ul>
+      <a class="btn" id="pl" href="#" target="_blank" rel="noopener sponsored" data-t="buy"></a>
+    </div>
+    <div class="meter">
+      <p data-t="mp"></p>
+      <div class="track"><div class="fill" id="fill"></div></div>
+      <strong id="gm"></strong>
+      <p id="gu" style="margin-top:6px"></p>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="vis">
+  <div class="warn rv">
+    <div class="screw" aria-hidden="true"></div>
+    <div>
+      <h2 style="font-size:clamp(1.3rem,3.2vw,2rem)" data-t="wh"></h2>
+      <p data-t="wp"></p>
+      <a class="btn ghost" id="tl" href="#" target="_blank" rel="noopener sponsored" data-t="wb"></a>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="steps">
+  <h2 class="rv" data-t="h2c"></h2>
+  <p class="sub rv" data-t="subc"></p>
+  <ol class="steps rv" style="padding:0">
+    <li><b data-t="s1b"></b><span data-t="s1"></span></li>
+    <li><b data-t="s2b"></b><span data-t="s2"></span></li>
+    <li><b data-t="s3b"></b><span data-t="s3"></span></li>
+  </ol>
+</section>
+
+<footer><p data-t="note" style="margin-bottom:8px"></p><p data-t="foot"></p></footer>
+
+<script>
+/* ===== À MODIFIER / EDIT: Amazon Associates IDs ===== */
+const TAGS={fr:"",be:"",us:""}; // ex: fr:"tonid-21"
+const RELEASE=new Date("2026-11-18T01:00:00+01:00");
+const SHOPS={fr:"https://www.amazon.fr",be:"https://www.amazon.com.be",us:"https://www.amazon.com"};
+const SSD={
+ 1:{n:"WD_BLACK SN850X 1 ",s:7300,q:"WD BLACK SN850X 1TB heatsink PS5",p:.25},
+ 2:{n:"Samsung 990 PRO 2 ",s:7450,q:"Samsung 990 PRO 2TB heatsink PS5",p:.5},
+ 4:{n:"Samsung 990 PRO 4 ",s:7450,q:"Samsung 990 PRO 4TB heatsink PS5",p:1}
+};
+const T={
+fr:{rbe:"Belgique",tag:"GTA 6 arrive sur PS5",h1a:"Ton SSD PS5,",h1b:"prêt pour GTA 6.",lead:"Vérifie la compatibilité exacte avec ta console en 2 clics.",dd:"Jours",hh:"Heures",mm:"Min",ss:"Sec",hint:"Descends",
+out:"GTA 6 est sorti. Temps écoulé depuis la sortie.",
+h2a:"Ce que ta PS5 accepte",suba:"Ce sont les conditions de Sony pour un SSD interne. Si un disque les respecte, il passe.",
+sp1:"PCIe Gen4, format 2280 pour la plupart des modèles.",sp2b:"5 500 Mo/s",sp2:"Vitesse de lecture minimale recommandée par Sony.",sp3b:"Dissipateur",sp3:"Obligatoire. Prends un modèle déjà livré avec.",
+h2b:"À quoi joues-tu en plus de GTA 6 ?",subb:"Choisis ton profil, on te montre le SSD qui va avec.",
+c1:"1 To",u1:"GTA 6 + plusieurs gros jeux",c2:"2 To",u2:"Warzone + FC + GTA 6",c4:"4 To",u4:"Gros catalogue, 15 jeux et plus",
+rec:"Recommandé pour GTA 6",spd:"Vitesse de lecture :",hs:"Dissipateur :",hsb:"choisis la version « Heatsink »",buy:"Vérifier le prix sur Amazon",
+mp:"Stockage ajouté à ta PS5",un:"To",speed:"Mo/s",f1:"Environ 700 Go libres après GTA 6 (environ 210 Go).",f2:"Environ 1,6 To libres après GTA 6 (environ 210 Go).",f4:"Environ 3,5 To libres après GTA 6 (environ 210 Go).",note:"Taille de GTA 6 : environ 210 à 212 Go sur PS5 d’après les données de préchargement. À confirmer après installation.",
+d1:"GTA 6 plus plusieurs autres gros jeux.",d2:"GTA 6, Warzone et FC.",d4:"GTA 6 plus un gros catalogue, 15 jeux et plus.",
+wh:"Ne foire pas la vis de ta PS5",wp:"Il te faut un tournevis cruciforme PH1. Un mauvais embout abîme la vis et te fait perdre du temps.",wb:"Ajouter le tournevis au panier",wq:"tournevis cruciforme PH1",
+h2c:"Installer le SSD",subc:"Dix minutes, sans stress.",
+s1b:"Éteins et débranche la console",s1:"Attends qu’elle refroidisse avant d’ouvrir.",s2b:"Retire le cache et la vis de l’emplacement M.2",s2:"C’est là que ton tournevis PH1 sert.",s3b:"Insère le SSD avec son dissipateur",s3:"Remets la vis, referme, puis formate le disque depuis la PS5.",
+foot:"En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.",title:"PS5 Storage Check – SSD pour GTA 6"},
+en:{rbe:"Belgium",tag:"GTA 6 is coming to PS5",h1a:"Your PS5 SSD,",h1b:"ready for GTA 6.",lead:"Check exact compatibility with your console in 2 clicks.",dd:"Days",hh:"Hours",mm:"Min",ss:"Sec",hint:"Scroll down",
+out:"GTA 6 is out. Time since release.",
+h2a:"What your PS5 accepts",suba:"These are Sony’s requirements for an internal SSD. If a drive meets them, it works.",
+sp1:"PCIe Gen4, 2280 size for most models.",sp2b:"5,500 MB/s",sp2:"Minimum read speed recommended by Sony.",sp3b:"Heatsink",sp3:"Required. Pick a model that ships with one.",
+h2b:"What do you play besides GTA 6?",subb:"Pick your profile and we show you the matching SSD.",
+c1:"1 TB",u1:"GTA 6 + several big games",c2:"2 TB",u2:"Warzone + FC + GTA 6",c4:"4 TB",u4:"Big library, 15 games or more",
+rec:"Recommended for GTA 6",spd:"Read speed:",hs:"Heatsink:",hsb:"pick the “Heatsink” version",buy:"Check the price on Amazon",
+mp:"Storage added to your PS5",un:"TB",speed:"MB/s",f1:"About 700 GB left after GTA 6 (about 210 GB).",f2:"About 1.6 TB left after GTA 6 (about 210 GB).",f4:"About 3.5 TB left after GTA 6 (about 210 GB).",note:"GTA 6 size: about 210 to 212 GB on PS5 based on preload data. To be confirmed after install.",
+d1:"GTA 6 plus several other big games.",d2:"GTA 6, Warzone and FC.",d4:"GTA 6 plus a big library, 15 games or more.",
+wh:"Don’t strip your PS5 screw",wp:"You need a PH1 Phillips screwdriver. The wrong bit damages the screw and wastes your time.",wb:"Add the screwdriver to your cart",wq:"PH1 Phillips screwdriver",
+h2c:"Installing the SSD",subc:"Ten minutes, no stress.",
+s1b:"Turn off and unplug the console",s1:"Let it cool down before opening it.",s2b:"Remove the cover and the M.2 slot screw",s2:"This is where your PH1 screwdriver comes in.",s3b:"Insert the SSD with its heatsink",s3:"Put the screw back, close up, then format the drive from the PS5.",
+foot:"As an Amazon Associate I earn from qualifying purchases.",title:"PS5 Storage Check – SSD for GTA 6"}
+};
+let lang=(navigator.language||"fr").toLowerCase().startsWith("fr")?"fr":"en";
+let region=lang==="fr"?"fr":"us",cap="2";
+const $=id=>document.getElementById(id);
+const t=k=>T[lang][k];
+const link=q=>{const g=TAGS[region];return SHOPS[region]+"/s?k="+encodeURIComponent(q)+(g?"&tag="+g:"")};
+function pressed(sel,attr,val){document.querySelectorAll(sel+" button").forEach(x=>x.setAttribute("aria-pressed",x.dataset[attr]===val))}
+function render(anim){
+ document.documentElement.lang=lang;document.title=t("title");
+ document.querySelectorAll("[data-t]").forEach(e=>e.textContent=t(e.dataset.t));
+ const p=SSD[cap];
+ $("pn").textContent=p.n+t("un");
+ $("ps").textContent=p.s.toLocaleString(lang==="fr"?"fr-FR":"en-US")+" "+t("speed");
+ $("pd").textContent=t("d"+cap);
+ $("pl").href=link(p.q);$("tl").href=link(t("wq"));
+ $("gm").textContent=cap+" "+t("un");$("gu").textContent=t("f"+cap);
+ const f=$("fill");f.style.width="0";requestAnimationFrame(()=>requestAnimationFrame(()=>f.style.width=p.p*100+"%"));
+ pressed("#lg","l",lang);pressed("#rg","r",region);pressed("#pick","k",cap);
+ if(anim){const c=$("card");c.classList.remove("swap");void c.offsetWidth;c.classList.add("swap")}
+ loop(true);
+}
+$("pick").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cap=b.dataset.k;render(true)});
+$("rg").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;region=b.dataset.r;lang=region==="us"?"en":"fr";render(false)});
+$("lg").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;lang=b.dataset.l;if(lang==="en"&&region!=="us")region="us";if(lang==="fr"&&region==="us")region="fr";render(false)});
+/* compte à rebours / countdown */
+const last={};
+function set(id,v){const el=$(id),x=String(v).padStart(2,"0");if(last[id]!==x){el.textContent=x;el.classList.remove("tick");void el.offsetWidth;el.classList.add("tick");last[id]=x}}
+function loop(){
+ let diff=RELEASE-Date.now();
+ if(diff<=0){diff=-diff;const o=$("out");o.style.display="block";o.textContent=t("out")}
+ const s=Math.floor(diff/1000);
+ set("d",Math.floor(s/86400));set("h",Math.floor(s%86400/3600));set("m",Math.floor(s%3600/60));set("s",s%60);
+}
+setInterval(loop,1000);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+const sun=$("sun"),bar=$("bar");
+addEventListener("scroll",()=>{
+ const y=scrollY,max=document.documentElement.scrollHeight-innerHeight;
+ bar.style.width=(y/max*100)+"%";
+ sun.style.transform="translateY("+Math.min(y*.45,600)+"px) scale("+(1+y/2200)+")";
+},{passive:true});
+render(false);
+</script>
+</body>
+</html>

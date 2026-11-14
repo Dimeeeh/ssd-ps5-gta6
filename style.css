@@ -1,0 +1,377 @@
+/**
+ * PS5 Storage Check (Spécial GTA 6)
+ * style.css : thème Vice City, mobile-first
+ */
+
+:root {
+    --nuit: #0b0618;
+    --nuit-2: #150a2b;
+    --carte: rgba(28, 14, 52, 0.72);
+    --rose: #ff2d95;
+    --orange: #ff9a3c;
+    --jaune: #ffd23f;
+    --cyan: #2ee6d6;
+    --violet: #7b2cff;
+    --texte: #fff7fb;
+    --texte-doux: #bfaed6;
+    --bordure: rgba(255, 255, 255, 0.12);
+    --sunset: linear-gradient(180deg, var(--jaune) 0%, var(--orange) 38%, var(--rose) 72%, var(--violet) 100%);
+    --degrade-gta: linear-gradient(90deg, var(--rose), var(--orange));
+    --titre: "Anton", Impact, "Arial Narrow Bold", sans-serif;
+    --corps: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--corps);
+    color: var(--texte);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(120% 60% at 50% 0%, #3a0f58 0%, rgba(58, 15, 88, 0) 70%),
+        linear-gradient(180deg, var(--nuit-2) 0%, var(--nuit) 55%);
+    background-attachment: fixed;
+}
+
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+
+/* BARRE SUPÉRIEURE */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background: rgba(11, 6, 24, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--bordure);
+}
+
+.logo {
+    font-family: var(--titre);
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    background: var(--degrade-gta);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#select-region {
+    background: var(--nuit);
+    color: var(--texte);
+    border: 1px solid var(--bordure);
+    border-radius: 999px;
+    padding: 7px 12px;
+    font: 500 0.82rem var(--corps);
+    cursor: pointer;
+    max-width: 55vw;
+}
+
+/* CONTENEUR */
+.container {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 16px 32px;
+    flex: 1;
+}
+
+/* HERO : le soleil rayé est l'élément signature */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 44px 0 20px;
+    isolation: isolate;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 6px;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: var(--sunset);
+    -webkit-mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 17px);
+    mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 17px);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 40px rgba(255, 45, 149, 0.55));
+}
+
+.tag-sortie {
+    display: inline-block;
+    padding: 5px 14px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    background: rgba(11, 6, 24, 0.6);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-family: var(--titre);
+    font-weight: 400;
+    font-size: clamp(2.3rem, 11vw, 3.4rem);
+    line-height: 1.02;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-shadow: 0 3px 0 var(--rose), 0 0 28px rgba(255, 45, 149, 0.55);
+}
+
+.hero p {
+    max-width: 38ch;
+    margin: 14px auto 0;
+    color: var(--texte-doux);
+    font-size: 0.98rem;
+}
+
+/* COMPTE À REBOURS */
+.countdown {
+    margin: 8px 0 26px;
+    padding: 14px 12px 12px;
+    text-align: center;
+    background: var(--carte);
+    border: 1px solid var(--bordure);
+    border-radius: 18px;
+}
+
+.cd-titre {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--jaune);
+    margin-bottom: 10px;
+}
+
+.cd-grille {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.cd-bloc {
+    padding: 8px 0 6px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cd-bloc b {
+    display: block;
+    font-family: var(--titre);
+    font-weight: 400;
+    font-size: 1.9rem;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+}
+
+.cd-bloc span {
+    font-size: 0.72rem;
+    color: var(--texte-doux);
+}
+
+/* SÉLECTEUR DE PROFIL */
+.selecteur { margin-bottom: 22px; }
+
+.selecteur h2 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+.grille-boutons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.grille-boutons button {
+    position: relative;
+    width: 100%;
+    padding: 16px 16px 16px 20px;
+    text-align: left;
+    font: 600 0.96rem var(--corps);
+    color: var(--texte-doux);
+    background: var(--carte);
+    border: 1px solid var(--bordure);
+    border-radius: 14px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.12s;
+}
+
+.grille-boutons button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: var(--bordure);
+    transition: background 0.2s;
+}
+
+.grille-boutons button:hover { color: var(--texte); }
+.grille-boutons button:active { transform: scale(0.98); }
+
+.grille-boutons button.actif {
+    color: var(--texte);
+    background: rgba(255, 45, 149, 0.14);
+    border-color: var(--rose);
+    box-shadow: 0 0 22px rgba(255, 45, 149, 0.35);
+}
+
+.grille-boutons button.actif::before { background: var(--degrade-gta); }
+
+/* CARTE RÉSULTAT */
+.carte-resultat {
+    position: relative;
+    margin-bottom: 18px;
+    padding: 24px 18px 20px;
+    background: var(--carte);
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-image:
+        linear-gradient(var(--nuit-2), var(--nuit-2)),
+        var(--degrade-gta);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55), 0 0 40px rgba(255, 45, 149, 0.18);
+}
+
+.carte-resultat.anim { animation: apparition 0.45s cubic-bezier(0.2, 0.9, 0.3, 1); }
+
+@keyframes apparition {
+    from { opacity: 0.2; transform: translateY(14px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 13px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background: var(--degrade-gta);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.carte-resultat h3 {
+    font-family: var(--titre);
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 1.12;
+    margin-bottom: 16px;
+}
+
+.specs {
+    list-style: none;
+    margin-bottom: 14px;
+    padding: 6px 14px;
+    border: 1px solid var(--bordure);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.specs li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 9px 0;
+    font-size: 0.9rem;
+    color: var(--texte-doux);
+}
+
+.specs li + li { border-top: 1px solid var(--bordure); }
+.specs strong { color: var(--cyan); text-align: right; }
+
+.argument {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: var(--texte-doux);
+}
+
+/* BOUTON D'ACHAT */
+.btn-amazon {
+    display: block;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1rem;
+    color: #1a0b2e;
+    background: linear-gradient(180deg, #ffc15e, var(--orange));
+    border-radius: 14px;
+    box-shadow: 0 6px 0 #c76a12, 0 12px 26px rgba(255, 154, 60, 0.35);
+    transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.btn-amazon:hover { transform: translateY(-2px); }
+.btn-amazon:active { transform: translateY(4px); box-shadow: 0 2px 0 #c76a12; }
+
+/* ACCESSOIRE */
+.carte-accessoire {
+    padding: 16px;
+    background: rgba(46, 230, 214, 0.06);
+    border: 1px dashed rgba(46, 230, 214, 0.5);
+    border-radius: 16px;
+}
+
+.carte-accessoire h4 {
+    margin-bottom: 6px;
+    font-size: 0.98rem;
+    color: var(--cyan);
+}
+
+.carte-accessoire p {
+    margin-bottom: 12px;
+    font-size: 0.86rem;
+    color: var(--texte-doux);
+}
+
+.btn-secondaire {
+    display: block;
+    padding: 11px 14px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-secondaire:hover { background: var(--cyan); color: var(--nuit); }
+
+/* PIED DE PAGE */
+footer {
+    padding: 20px 16px 28px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--texte-doux);
+    border-top: 1px solid var(--bordure);
+}
+
+/* GRANDS ÉCRANS */
+@media (min-width: 768px) {
+    .hero::before { width: 300px; height: 300px; }
+    .container { max-width: 560px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+}
